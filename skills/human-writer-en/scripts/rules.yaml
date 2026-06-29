@@ -1,0 +1,369 @@
+en:
+  # Suspect vocabulary: Tier 1 (high signal) + Tier 2 (medium signal).
+  # Tier 3 (low signal / frequency-only) is documented in tells-stylistic-en.md
+  # but intentionally excluded here — the analyzer doesn't yet measure
+  # paragraph-level Tier 3 density and false-positive risk is too high.
+  # Total ~200 entries. See references/tells-stylistic-en.md for doctrine.
+  suspect_vocabulary:
+    # --- Tier 1: high signal ---
+    # Metaphorical movement and discovery
+    - delve
+    - delving
+    - embark
+    - navigate
+    - journey
+    - unleash
+    - harness
+    - unlock
+    # Inflated qualifiers
+    - seamless
+    - seamlessly
+    - robust
+    - transformative
+    - vibrant
+    - intricate
+    - multifaceted
+    - nuanced
+    - paramount
+    - pivotal
+    - meticulous
+    - meticulously
+    - comprehensive
+    - holistic
+    # Marketing inflation
+    - innovative
+    - cutting-edge
+    - state-of-the-art
+    - revolutionary
+    - game-changing
+    - game-changer
+    - world-class
+    - best-in-class
+    - unparalleled
+    - unprecedented
+    - optimal
+    # Corporate jargon
+    - leverage
+    - foster
+    - empower
+    - tapestry
+    - realm
+    - synergy
+    - ecosystem
+    - paradigm
+    - bandwidth
+    - wheelhouse
+    - learnings
+    # Verbing of nouns
+    - ideate
+    - operationalize
+    - incentivize
+    - strategize
+    - conceptualize
+    - contextualize
+    - gamify
+
+    # --- Tier 2: medium signal ---
+    # Connectors and transitions
+    - moreover
+    - furthermore
+    - additionally
+    - consequently
+    - hence
+    - thus
+    - therefore
+    - notably
+    - particularly
+    # Vague qualifiers
+    - crucial
+    - vital
+    - essential
+    - significant
+    - considerable
+    - substantial
+    # Action verbs (motivational LLM tics)
+    - elevate
+    - streamline
+    - optimize
+    - facilitate
+    # Discovery verbs (template openers)
+    - uncover
+    - reveal
+    - unveil
+    - showcase
+    - highlight
+    - emphasize
+    - illustrate
+    - exemplify
+    - embody
+    - encapsulate
+    - encompass
+    - constitute
+    - signify
+    - denote
+    - articulate
+    - elucidate
+    - expound
+    - posit
+    - advocate
+    - champion
+    # Caretaking verbs
+    - nurture
+    - cultivate
+    - hone
+    - refine
+    # Beauty and superlative adjectives
+    - exquisite
+    - elegant
+    - intuitive
+    - immersive
+    - engaging
+    - captivating
+    - compelling
+    - riveting
+    - gripping
+    - breathtaking
+    - awe-inspiring
+    - mind-blowing
+    - stunning
+    - remarkable
+    - extraordinary
+    - exceptional
+    - outstanding
+    - phenomenal
+    - spectacular
+    - magnificent
+    - splendid
+    - marvelous
+    - fabulous
+    - terrific
+    - superb
+    - excellent
+    - brilliant
+    - masterful
+    - masterpiece
+    - hallmark
+    - paragon
+    - epitome
+    - quintessence
+    - archetype
+    # Foundation metaphors
+    - cornerstone
+    - bedrock
+    - pillar
+    - backbone
+    - lifeblood
+    - nexus
+    # Joining metaphors
+    - convergence
+    - confluence
+    - synthesis
+    - amalgamation
+    # Additional Tier 2 — process verbs and adjectives
+    - polish
+    - perfect
+    - flourishing
+    - thriving
+    - trailblazing
+    - groundbreaking
+    - pioneering
+    - skyrocketing
+    - exploding
+    - surging
+    - booming
+    # Additional Tier 2 — frictionless adjectives
+    - frictionless
+    - effortless
+    - hassle-free
+    - painless
+    # Additional Tier 2 — connectors
+    - arguably
+    - admittedly
+    # Additional Tier 2 — corporate metaphors
+    - rooted
+    - anchored
+    - grounded
+    # Additional Tier 2 — high-flying adjectives
+    - towering
+    - soaring
+    - monumental
+    - herculean
+    - colossal
+    # Additional Tier 2 — perception verbs
+    - resonate
+    - resonates
+    - resonating
+    - galvanize
+    - galvanizes
+    - galvanizing
+    # Additional Tier 2 — possibility nouns
+    - possibilities
+    - opportunities
+    # Additional Tier 2 — meta-verbs
+    - underscores
+    - underscore
+    - underscoring
+    - underpins
+    - underpinning
+    - encapsulates
+    - epitomizes
+    - exemplifies
+    - typifies
+    # Additional Tier 2 — bridging nouns
+    - bridge
+    - gateway
+    - springboard
+    - launchpad
+    - catalyst
+    - catalysts
+    - linchpin
+    - keystone
+    # Additional Tier 2 — quality nouns
+    - quality
+    - resilience
+    - scalability
+    - flexibility
+    - adaptability
+    - sustainability
+  ai_constructions:
+    # --- Antithesis amplifiers (high) ---
+    - pattern: "It['’]s not just .*?, it['’]s"
+      severity: high
+    - pattern: "Not just .*? [—-] "
+      severity: high
+    - pattern: "More than just .*?, (?:this|it) is"
+      severity: high
+    - pattern: "is more than just a "
+      severity: high
+    # --- Vague scene-setters (high) ---
+    - pattern: "In today['’]s fast-paced"
+      severity: high
+    - pattern: "In an era where"
+      severity: high
+    - pattern: "In a digital landscape"
+      severity: high
+    - pattern: "In the modern age of"
+      severity: high
+    - pattern: "Gone are the days"
+      severity: high
+    - pattern: "Imagine a world where"
+      severity: high
+    - pattern: "What if I told you"
+      severity: high
+    # --- Dual-audience hedges (medium) ---
+    - pattern: "Whether you['’]re .*? or"
+      severity: medium
+    # --- Dramatic openers (medium) ---
+    - pattern: "Buckle up,?"
+      severity: medium
+    - pattern: "Let['’]s break it down"
+      severity: medium
+    - pattern: "Let['’]s dive in"
+      severity: medium
+    - pattern: "Here['’]s the thing:"
+      severity: medium
+    - pattern: "Here['’]s the deal:"
+      severity: medium
+    - pattern: "Spoiler(?: alert)?:"
+      severity: medium
+    - pattern: "Plot twist:"
+      severity: medium
+    # --- Pseudo-summaries (medium) ---
+    - pattern: "Long story short,"
+      severity: medium
+    - pattern: "To put it simply,"
+      severity: medium
+    - pattern: "In a nutshell,"
+      severity: medium
+    - pattern: "At the end of the day,"
+      severity: medium
+    - pattern: "When all is said and done,"
+      severity: medium
+    - pattern: "All things considered,"
+      severity: medium
+    # --- Catalog frames (medium) ---
+    - pattern: "From .*? to .*?,.*? has it all"
+      severity: medium
+    - pattern: "Look no further than"
+      severity: medium
+    # --- Stage-direction openers (medium) ---
+    - pattern: "Say goodbye to .*?, hello to"
+      severity: medium
+    # --- Pseudo-Socratic Q&A (medium) ---
+    - pattern: "The result\\? "
+      severity: medium
+    - pattern: "The takeaway\\? "
+      severity: medium
+    - pattern: "Why does this matter\\? Because"
+      severity: medium
+    - pattern: "You might be wondering"
+      severity: medium
+    # --- Direct topic markers (medium) ---
+    - pattern: "Dive deep into"
+      severity: medium
+    - pattern: "In the realm of"
+      severity: medium
+    - pattern: "At the heart of"
+      severity: medium
+    # --- Hedging openers (low/medium) ---
+    - pattern: "It['’]s important to note that"
+      severity: medium
+    - pattern: "It['’]s worth noting that"
+      severity: medium
+    - pattern: "It bears mentioning that"
+      severity: medium
+    - pattern: "It cannot be overstated that"
+      severity: medium
+    - pattern: "Suffice it to say"
+      severity: medium
+    - pattern: "Needless to say,"
+      severity: low
+    - pattern: "Keep in mind that"
+      severity: low
+    - pattern: "Some might argue that"
+      severity: low
+    - pattern: "One could say that"
+      severity: low
+    # --- Conclusion templates (medium) ---
+    - pattern: "In conclusion,"
+      severity: medium
+    - pattern: "To summarize,"
+      severity: medium
+    - pattern: "To wrap up,"
+      severity: medium
+    - pattern: "In closing,"
+      severity: medium
+    - pattern: "Ultimately,"
+      severity: low
+    - pattern: "All in all,"
+      severity: low
+    - pattern: "Going forward,"
+      severity: low
+    - pattern: "Looking ahead,"
+      severity: low
+    - pattern: "The possibilities are endless"
+      severity: medium
+    - pattern: "This is just the beginning"
+      severity: medium
+  thresholds:
+    # The literal em-dash "—" (U+2014) is a standalone AI signature: target 0
+    # in body prose. Convert every occurrence to a comma, colon, period or
+    # parentheses. (En-dash "–" in numeric ranges and the minus sign are fine.)
+    em_dash_per_1000_words: 1.0
+    burstiness_min: 8.0
+    sentence_stdev_min: 8.0
+    lexical_diversity_min: 0.45
+    comma_density_max: 2.0
+    bullet_parallelism_max: 0.80
+
+content_type_weights:
+  marketing:     {statistical: 1.0, stylistic: 1.0, structural: 1.0}
+  short-comms:   {statistical: 0.6, stylistic: 1.2, structural: 0.5}
+  technical:     {statistical: 0.5, stylistic: 0.7, structural: 0.3}
+  editorial-seo: {statistical: 0.9, stylistic: 1.0, structural: 1.0}
+
+verdict_bands:
+  LOW_RISK: [0, 24]
+  MEDIUM_RISK: [25, 49]
+  HIGH_RISK: [50, 74]
+  CRITICAL: [75, 100]
